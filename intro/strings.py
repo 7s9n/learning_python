@@ -78,3 +78,11 @@ start = timer()
 my_string = ''.join(my_list)
 end = timer()
 print(end - start)
+
+print( 'hussein'.isalpha() ) #True if the string is an alphabetic string, False otherwise. -> prints True
+print( 'hussein'.isalnum() ) #True if the string is an alpha-numeric string, False otherwise. -> prints True
+print( 'hussein123'.isalnum() )
+
+print( 'hussein'.islower() ) #True if the string is a lowercase string, False otherwise. -> prints True
+print( 'hussein'.isupper() ) #True if the string is an uppercase string, False otherwise. -> prints False
+print( '123'.isdigit() ) #True if the string is a digit string, False otherwise. -> prints True
