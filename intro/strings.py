@@ -3,8 +3,11 @@
 # They can be enclosed in single quotes ('...') or double quotes ("...") with the same result 2. 
 # \ can be used to escape quotes:
 
+#Strings: ordered , immutable , text representation
 txt = 'Hello this is a string'
 #txt = "Hello this is a string"
+#txt[0] = 'A' # error cuz string is immutable 'str' object does not support item assignment
+
 print(txt)
 
 txt = 'I\'m Hussein.' # use \' to escape the single quote...
@@ -48,3 +51,30 @@ print(str.title()) #words start with uppercased characters and all remaining cas
 print('2'.zfill(2)) #Pad a numeric string with zeros on the left, to fill a field of the given width. -> 02
 print(str.upper()) #Return a copy of the string converted to uppercase.
 print(str.lower()) #Return a copy of the string converted to lowercase.
+
+str = 'a,b,c,d,e,f,g,h,i,j,k,l,m,n'
+print(str) #will print a,b,c,d,e,f,g,h,i,j,k,l,m,n
+
+str = str.split(',') #Return a list of the words in the string, using sep as the delimiter string.
+
+print(str) #['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n']
+
+str = ' '.join(str)
+print(str) #a b c d e f g h i j k l m n
+
+from timeit import default_timer as timer
+my_list = ['a'] * 100000
+
+my_string = ''
+#bad
+start = timer()
+for char in my_list:
+    my_string += char
+end = timer()
+print(end - start)
+
+#good
+start = timer()
+my_string = ''.join(my_list)
+end = timer()
+print(end - start)
