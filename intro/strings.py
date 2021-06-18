@@ -37,12 +37,14 @@ print(full_name[:5] + full_name[5:]) #Hussein Sarea
 
 print(full_name[-2:]) # characters from the second-last (included) to the end
 
-string_txt = 'hussein loves c++ more than python.'
-print(string_txt.capitalize()) #make the first character have upper case and the rest lower case.
-print(string_txt.endswith('python.'))   #True
-print(string_txt.endswith('python'))    #False
-print(string_txt.startswith('hussein')) #True
-print(string_txt.startswith('Hussein')) #False
-print(string_txt.swapcase()) #Convert uppercase characters to lowercase and lowercase characters to uppercase.
-print(string_txt.title()) #words start with uppercased characters and all remaining cased characters have lower case.
+str = 'hussein loves c++ more than python.'
+print(str.capitalize()) #make the first character have upper case and the rest lower case.
+print(str.endswith('python.'))   #True
+print(str.endswith('python'))    #False
+print(str.startswith('hussein')) #True
+print(str.startswith('Hussein')) #False
+print(str.swapcase()) #Convert uppercase characters to lowercase and lowercase characters to uppercase.
+print(str.title()) #words start with uppercased characters and all remaining cased characters have lower case.
 print('2'.zfill(2)) #Pad a numeric string with zeros on the left, to fill a field of the given width. -> 02
+print(str.upper()) #Return a copy of the string converted to uppercase.
+print(str.lower()) #Return a copy of the string converted to lowercase.
