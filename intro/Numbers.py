@@ -19,3 +19,27 @@ print(17 % 3) # the % operator returns the remainder of the division
 
 print(5 ** 2) # 5 squared
 print (2 ** 7) # 2 to the power of 7
+
+x = 5
+y = 10
+
+#Assignment operators
+x = y #The left operand gets set to the value of the expression on the right
+x += y #same as x = x + y
+x -= y #same as x = x - y
+x *= y #same as x = x * y
+x**= y #same as x = x ** y
+x /= y #same as x = x / y
+x //=y #same as x = x // y
+x %= y #same as x = x % y
+
+#casting
+x = '100'
+y = '200'
+
+print(x + y) #will print 100200
+
+x = int(x)
+y = int(y)
+
+print(x + y) #will print 300
