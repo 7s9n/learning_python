@@ -78,3 +78,24 @@
 #     print('Evaluated to True')
 # else:
 #     print('Evaluated to False')
+
+#The following will return False:
+# bool(False)
+# bool(None)
+# bool(0)
+# bool("")
+# bool(())
+# bool([])
+# bool({})
+
+#One more value, or object in this case, evaluates to False, 
+#and that is if you have an object that is made from a class with a __len__ function that returns 0 or False:
+
+class MyClass():
+    def __len__(self):
+        return 0
+
+my_object = MyClass()
+
+print( bool(my_object) )
+
