@@ -8,6 +8,7 @@
 #Exponent:          3 ** 2
 #Modulus:           3 % 2
 
+#code snippets
 print(f"classic division {17 / 3}") # classic division returns a float
 
 print(f"floor division {17 // 3}") # floor division discards the fractional part
