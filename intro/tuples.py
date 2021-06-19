@@ -25,6 +25,6 @@ mytuple = tuple([1 , 2 , 3])
 #     print(f'No {target} doesn\'t exist in mytuple.')
 
 mytuple = ("Hussein" , 22 , True)
-print(mytuple) #('Hussein', 22, True)
+print(mytuple) # ('Hussein', 22, True)
 
 
