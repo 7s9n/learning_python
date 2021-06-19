@@ -36,7 +36,7 @@ from typing import List
 # else:
 #     print(f'No {target} doesn\'t exist in the list.')
 
-names = ['Hussein' , 'Rema' , 'Ekram']
+# names = ['Hussein' , 'Rema' , 'Ekram']
 
 #pop(index=last_index)
 #Remove and return item at index (default last).
