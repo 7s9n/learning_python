@@ -1,6 +1,6 @@
 from typing import List
 
-#Lists: ordered , mutable , allows duplicate element
+#Lists: ordered , mutable , allows duplicate elements
 
 #Create a List:
 
