@@ -86,3 +86,16 @@ print( 'hussein123'.isalnum() )
 print( 'hussein'.islower() ) #True if the string is a lowercase string, False otherwise. -> prints True
 print( 'hussein'.isupper() ) #True if the string is an uppercase string, False otherwise. -> prints False
 print( '123'.isdigit() ) #True if the string is a digit string, False otherwise. -> prints True
+
+str = '     Hello      '
+
+print( str.lstrip() )
+print( str.rstrip() )
+print( str.strip() )
+
+str = 'hhh123zzz'
+print( str.lstrip('h') )
+print( str.rstrip('z') )
+print( str.rstrip('z3') )
+print( str.strip('hz') )
+

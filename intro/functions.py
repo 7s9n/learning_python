@@ -101,11 +101,30 @@ def is_leap(year:int)-> bool:
 # print(days_in_month(month=6 , year=2021))
 
 #Recursion
-def print_to(n:int) ->int:
-    if n > 1:
-        print_to(n - 1)
-    print(n)
-print_to(10)
+# def print_to(n:int) ->int:
+#     if n > 1:
+#         print_to(n - 1)
+#     print(n)
+# print_to(10)
+
+# A lambda function is a small anonymous function.
+# A lambda function can take any number of arguments, but can only have one expression.
+
+#Syntax
+#lambda arguments : expression
+#The expression is executed and the result is returned:
+
+# sum_two = lambda x , y : x + y
+# print( sum_two(1 , 2) ) #3
+
+# add_10 = lambda x : x + 10 #Add 10 to argument x, and return the result:
+# print( add_10(10) ) #20
+
+# def myFun(n:int) -> int:
+#     return lambda x : x * n
+
+# doubler = myFun(2)
+# print( doubler(8) )
 
 if __name__ == '__main__':
     # print_student_info('English' , 'Arabic' , 'Math' , 'Physics' , name='Hussein' , age=15)
