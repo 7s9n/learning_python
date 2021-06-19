@@ -55,7 +55,7 @@ def is_prime(n: int) -> bool:
 # while True:
 #     print('Infinite loop')
 
-x = [1 , 2 , 3 , 4 , 5 , 6 , 7 , 8 , 9]
+# x = [1 , 2 , 3 , 4 , 5 , 6 , 7 , 8 , 9]
 
 # for i in x:
 #     print(i)
@@ -83,3 +83,22 @@ x = [1 , 2 , 3 , 4 , 5 , 6 , 7 , 8 , 9]
 # i = 1
 # while i < 10:
 #     pass 
+
+# board = [
+#     [1 , 2 , 3],
+#     [4 , 5 , 6],
+#     [7 , 8 , 9]
+# ]
+
+# for list in board:
+#     for num in list:
+#         print(num , ' ' , end = '')
+#     print()
+
+x = ['a' , 'b' , 'c' , 'd']
+
+# for idx , char in enumerate(x):
+#     print(idx , ' ' , char)
+
+for idx , char in enumerate(x , start=1):
+    print(idx , ' ' , char)
