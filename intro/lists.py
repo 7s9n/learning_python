@@ -67,8 +67,71 @@ names = ['Hussein' , 'Rema' , 'Ekram']
 # unsorted_list.sort() # sorts the actual list
 # print(unsorted_list) #[1, 2, 3, 4, 5, 6, 7, 8, 9]
 
-first_list = [0] * 5
-second_list = [i for i in range(1 , 6)]
+# first_list = [0] * 5 #create a list of 5 zeroes [0, 0, 0, 0, 0]
+# second_list = [i for i in range(1 , 6)]
 
-new_list = first_list + second_list
-print(new_list)
+# new_list = first_list + second_list
+# print(new_list) #[0, 0, 0, 0, 0, 1, 2, 3, 4, 5]
+
+# nums = [1 , 2 , 3 , 4 , 5 , 6 , 7 , 8 , 9 , 10]
+# odds = nums[::2] #starts from 0 and takes every second item.
+# evens = nums[1::2] #starts from 1 and takes every second item.
+
+# print(odds)
+# print(evens)
+# print(nums)
+
+# reversed_nums = nums[::-1]
+# print(reversed_nums)
+
+# list_org = [1 , 2 , 3 , 4]
+# list_cpy = list_org #this will not copy the actual data instead it coppies the reference in the memory.
+
+# list_cpy[0] = None
+# print(list_org)# [None, 2, 3, 4]
+# print(list_cpy)# [None, 2, 3, 4]
+
+# list_org = [1 , 2 , 3 , 4]
+# list_cpy = list_org.copy()
+
+# list_cpy[0] = None
+# print(list_org)# [1, 2, 3, 4]
+# print(list_cpy)# [None, 2, 3, 4]
+
+# list_org = [1 , 2 , 3 , 4]
+# list_cpy = list(list_org)
+
+# list_cpy[0] = None
+# print(list_org)# [1, 2, 3, 4]
+# print(list_cpy)# [None, 2, 3, 4]
+
+# list_org = [1 , 2 , 3 , 4]
+# list_cpy = list_org[:]
+
+# list_cpy[0] = None
+# print(list_org)# [1, 2, 3, 4]
+# print(list_cpy)# [None, 2, 3, 4]
+
+# nums = list([1 , 2 , 3 , 4 , 5])
+# squared = [i * i for i in nums]
+
+# print(nums)
+# print(squared)
+
+
+dup = [1 , 2 , 3 , 1 , 1 , 5 , 1 , 2]
+
+freq_of_1 = dup.count(1)
+print(freq_of_1) #4
+
+dummy = [0 , 0 , 5 , 5]
+
+dup.extend(dummy) #Extend list by appending elements from the iterable.
+
+dummy[0] = 1
+print(dup)      #[1, 2, 3, 1, 1, 5, 1, 2, 0, 0, 5, 5]
+print(dummy)    #[1, 0, 5, 5]
+
+dup.clear() #Remove all items from list.
+
+print(dup) #[]
