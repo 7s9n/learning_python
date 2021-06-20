@@ -119,19 +119,35 @@ from typing import List
 # print(squared)
 
 
-dup = [1 , 2 , 3 , 1 , 1 , 5 , 1 , 2]
+# dup = [1 , 2 , 3 , 1 , 1 , 5 , 1 , 2]
 
-freq_of_1 = dup.count(1)
-print(freq_of_1) #4
+# freq_of_1 = dup.count(1)
+# print(freq_of_1) #4
 
-dummy = [0 , 0 , 5 , 5]
+# dummy = [0 , 0 , 5 , 5]
 
-dup.extend(dummy) #Extend list by appending elements from the iterable.
+# dup.extend(dummy) #Extend list by appending elements from the iterable.
 
-dummy[0] = 1
-print(dup)      #[1, 2, 3, 1, 1, 5, 1, 2, 0, 0, 5, 5]
-print(dummy)    #[1, 0, 5, 5]
+# dummy[0] = 1
+# print(dup)      #[1, 2, 3, 1, 1, 5, 1, 2, 0, 0, 5, 5]
+# print(dummy)    #[1, 0, 5, 5]
 
-dup.clear() #Remove all items from list.
+# dup.clear() #Remove all items from list.
 
-print(dup) #[]
+# print(dup) #[]
+
+a = [1 , 2 , 3 , 4 , 5 , 6 , 7  , 8 , 9 , 10]
+b = filter( lambda n: n & 1 == 0 , a )
+
+print( list(b) ) #[2, 4, 6, 8, 10]
+
+c = [n for n in a if n & 1 == 0]
+print(c) #[2, 4, 6, 8, 10]
+
+from functools import reduce
+
+product_a = reduce( lambda x , y: x * y , a)
+print(product_a) #3628800 -> 1 * 2 * 3 * 4 * 5 * 6 * 7 * 8 * 9 * 10 = 3628800
+
+sum_a = reduce( lambda x , y: x + y  , a)
+print(sum_a) #55 -> 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 + 10 = 55
