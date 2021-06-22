@@ -16,7 +16,7 @@ def decimal_to_hexadecimal(decimal: int)-> str:
 if __name__ == '__main__':
     print(hex(-100))
     print(decimal_to_hexadecimal(-100))
-
+    
     for i in range(1 , 100000):
         print(decimal_to_hexadecimal(i))
         print(hex(i))
