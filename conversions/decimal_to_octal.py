@@ -10,7 +10,7 @@ def decimal_to_octal(decimal: int)->str:
         oct += rem * pow(10 , c)
         c+=1
         decimal //= 8
-    return f'{is_negative}0o{int(oct)}'
+    return f'{is_negative}0o{oct}'
 
 if __name__ == '__main__':
     for i in range(1 , 9000):

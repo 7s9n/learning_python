@@ -88,14 +88,31 @@
 # bool([])
 # bool({})
 
-#One more value, or object in this case, evaluates to False, 
+#One more value, or object in this case, evaluates to False,
 #and that is if you have an object that is made from a class with a __len__ function that returns 0 or False:
 
-class MyClass():
-    def __len__(self):
-        return 0
+# class MyClass():
+#     def __len__(self):
+#         return 0
+#
+# my_object = MyClass()
+#
+# print( bool(my_object) )
 
-my_object = MyClass()
+bools = [True , True , False]
 
-print( bool(my_object) )
+print(all(bools))
+print(any(bools))
 
+odds = [1 , 3 , 5 , 7 , 9]
+
+is_odd = lambda n: n & 1 != 0
+
+if all(is_odd(n) for n in odds):
+    print('All number is odd')
+else:
+    print('There\'s even number in this list')
+
+nums = [2 , 1 , 7 , 9]
+if any(n % 2 == 0 for n in nums):
+    print('Yes, there\'s at least one even number in this list')
