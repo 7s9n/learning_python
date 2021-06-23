@@ -136,6 +136,16 @@ from typing import List
 
 # print(dup) #[]
 
+#Remove the first item:
+thislist = ["apple", "banana", "cherry"]
+del thislist[0]
+print(thislist)
+
+# #Delete the entire list:
+# thislist = ["apple", "banana", "cherry"]
+# del thislist
+# print(thislist) #Error NameError: name 'thislist' is not defined
+
 a = [1 , 2 , 3 , 4 , 5 , 6 , 7  , 8 , 9 , 10]
 b = filter( lambda n: n & 1 == 0 , a )
 
