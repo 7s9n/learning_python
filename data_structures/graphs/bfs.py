@@ -1,5 +1,4 @@
 from typing import Dict , List , Set , Any
-
 class Graph:
     def __init__(self) ->None:
         self.vertices: Dict[Any , List[Any]] = {}
@@ -56,7 +55,6 @@ class Graph:
                 if adjacent_vertex not in visited:
                     visited.add(adjacent_vertex)
                     queue.append(adjacent_vertex)
-
         return traversal_list
 
 
@@ -69,11 +67,14 @@ def main():
     g.add_edge(2, 3)
     g.add_edge(3, 3)
     g.print_graph()
+
+
     # 0  :  1 -> 2
     # 1  :  2
     # 2  :  0 -> 3
     # 3  :  3
 
     print(g.bfs(1))
+
 if __name__ == '__main__':
     main()
