@@ -38,9 +38,9 @@ import os
 # print(cnt)
 
 cnt = 0
-# for dir , subdirs , files in os.walk('../Desktop'):
-#     for file in files:
-#         if file.endswith('.txt'):
-#             cnt += 1
+for dir , subdirs , files in os.walk('../Desktop'):
+    for file in files:
+        if file.endswith('.txt'):
+            cnt += 1
 
 print(cnt)
