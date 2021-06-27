@@ -4,7 +4,7 @@ import os
 #12-array single dimension.pdf
 
 def extract_num(s):
-    num = ''.join([c if c.isdigit() else '' for c in s])
+    num = ''.join([c for c in s if c.isdigit()])
     return num
 
 

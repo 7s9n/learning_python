@@ -26,6 +26,11 @@ class LinkedStack:
     def __str__(self) ->str:
         return ' -> '.join( [str(item) for item in self] )
 
+    def __contains__(self , value):
+        for item in self:
+            if item == value:
+                return True
+        return False
     def is_empty(self) -> bool:
         return self.__top == None
 
@@ -57,6 +62,8 @@ if __name__ == '__main__':
     s.push(1)
     s.push(2)
     s.push(3)
+    if 1 in s:
+        print('Yes')
     # print(s) 3 -> 2 -> 1
     # ss = iter(s)
     #

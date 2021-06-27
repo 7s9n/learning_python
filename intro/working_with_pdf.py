@@ -52,19 +52,42 @@ def merge_pdfs(paths , output_path):
     with open(output_path , 'wb') as out_file:
         pdf_writer.write(out_file)
 
-def split_pdf(path , at):
-    pass
+def merge_pdfs_v2(pdfs , output):
+    pdf_merger = PyPDF2.PdfFileMerger()
+
+    for pdf in pdfs:
+        if os.path.exists(pdf):
+            pdf_merger.append(pdf)
+
+    with open(output , 'wb') as out_file:
+        pdf_merger.write(out_file)
+
+def read_pdf(path):
+    pdf_reader = PyPDF2.PdfFileReader(path)
+
+    for page in pdf_reader.pages:
+        print(page.extractText()) # extracting text from page
+    pdf_reader.close()
+
 if __name__ == '__main__':
     pdf_path = '../Desktop/python-crash-course.pdf'
     pdf_paths = []
     output_path = os.path.join('.' , 'output.pdf')
 
-    extract_information(pdf_path)
+    # extract_information(pdf_path)
+    #
+    # rotate_page(pdf_path)
+    #
+    # for root , dirs , files in os.walk('C:/Users/Hussein Sarea/Desktop/Course c++'):
+    #     for file in files:
+    #         pdf_paths.append(os.path.join(root , file))
+    #
+    # merge_pdfs(pdf_paths , output_path)
 
-    rotate_page(pdf_path)
+    # read_pdf(pdf_path)
 
     for root , dirs , files in os.walk('C:/Users/Hussein Sarea/Desktop/Course c++'):
         for file in files:
             pdf_paths.append(os.path.join(root , file))
 
-    merge_pdfs(pdf_paths , output_path)
+    merge_pdfs_v2(pdf_paths , output_path)
