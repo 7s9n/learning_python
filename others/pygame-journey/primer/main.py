@@ -2,7 +2,6 @@
 import pygame
 import os , sys
 
-
 # Import random for random numbers
 import random
 
@@ -80,7 +79,7 @@ class Enemy(pygame.sprite.Sprite):
 
     def update(self):
         self.rect.move_ip( -self.speed , 0 )
-        if self.rect.left < 0:
+        if self.rect.right < 0:
             self.kill()
 
 # Define the cloud object extending pygame.sprite.Sprite
@@ -101,7 +100,7 @@ class Cloud(pygame.sprite.Sprite):
 
     def update(self):
         self.rect.move_ip( -5 , 0 )
-        if self.rect.left < 0:
+        if self.rect.right < 0:
             self.kill()
 
 # Initialize pygame
@@ -114,7 +113,20 @@ FPS = 30
 # Create the screen object
 # The size is determined by the constant SCREEN_WIDTH and SCREEN_HEIGHT
 screen = pygame.display.set_mode( (SCREEN_WIDTH , SCREEN_HEIGHT) )
+pygame.display.set_caption('Game')
 
+#load fonts
+font = pygame.font.SysFont('Arial' , 30)
+game_over_txt = font.render('You\'ve lost' , True , BLACK)
+
+def game_over():
+    screen.blit(game_over_txt ,
+    ( ( SCREEN_WIDTH - game_over_txt.get_width() ) / 2 ,
+    (SCREEN_HEIGHT - game_over_txt.get_height()) /2 ))
+    pygame.display.flip()
+    pygame.event.pump()
+
+    pygame.time.delay(3000)
 # Create custom events for adding a new enemy and cloud
 ADDENEMY_EVENT = pygame.USEREVENT + 1
 pygame.time.set_timer(ADDENEMY_EVENT , 250)
@@ -169,7 +181,7 @@ while running:
         elif event.type == ADDENEMY_EVENT:
             new_enemy = Enemy()
             enemies.add(new_enemy)
-            
+
             all_sprites.add(new_enemy)
 
         # Should we add a new cloud?
@@ -202,6 +214,8 @@ while running:
         move_up_sound.stop()
         move_down_sound.stop()
         collision_sound.play()
+
+        game_over()
         # Stop the loop
         running = False
 
