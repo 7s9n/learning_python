@@ -4,8 +4,8 @@
 # def sayHello(name: str):
 #     print(f'Hello {name}')
 
-#Python does not support function overloading. 
-# When we define multiple functions with the same name,the later one always overrides the prior and thus, 
+#Python does not support function overloading.
+# When we define multiple functions with the same name,the later one always overrides the prior and thus,
 # in the namespace, there will always be a single entry against each function name.
 
 # sayHello() error
@@ -46,7 +46,7 @@
 # print( format_full_name(second='Sarea', first='Hussein') )
 
 #Arbitrary Arguments, *args
-#If you do not know how many arguments that will be passed into your function, 
+#If you do not know how many arguments that will be passed into your function,
 # add a * before the parameter name in the function definition.
 #This way the function will receive a tuple of arguments, and can access the items accordingly:
 
@@ -62,7 +62,7 @@
 # print( sum() ) #0
 
 # Arbitrary Keyword Arguments, **kwargs
-# If you do not know how many keyword arguments that will be passed into your function, 
+# If you do not know how many keyword arguments that will be passed into your function,
 # add two asterisk: ** before the parameter name in the function definition.
 # This way the function will receive a dictionary of arguments, and can access the items accordingly:
 
@@ -97,7 +97,7 @@ def is_leap(year:int)-> bool:
 #     if month == 2 and is_leap(year):
 #         return 29
 #     return month_days[month]
-    
+
 # print(days_in_month(month=6 , year=2021))
 
 #Recursion
@@ -125,6 +125,7 @@ def is_leap(year:int)-> bool:
 
 # doubler = myFun(2)
 # print( doubler(8) )
+
 
 if __name__ == '__main__':
     # print_student_info('English' , 'Arabic' , 'Math' , 'Physics' , name='Hussein' , age=15)
