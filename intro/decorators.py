@@ -45,4 +45,4 @@ def repeat(times: int):
 def greet(s: str):
     print(f'Hello {s}.')
 
-greet('Hussein')
+greet('Hussein' )
