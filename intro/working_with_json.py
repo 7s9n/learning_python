@@ -1,17 +1,5 @@
 import json
 
-json_string = '''
-{
-  "states": [
-    {
-      "name": "Alabama",
-      "abbreviation": "AL"
-
-    }
-  ]
-}
-'''
-
 people_string = '''
 {
     "People": [
