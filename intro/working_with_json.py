@@ -1,3 +1,4 @@
+''' JavaScript Object Notation '''
 import json
 
 people_string = '''
