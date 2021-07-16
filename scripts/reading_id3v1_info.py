@@ -23,7 +23,7 @@ def is_id3v1(header):
 def get_genre(index: int) ->str:
     with genres_file.open('r') as genres:
         data = json.load(genres)
-    return data[str(index)]
+    return data.get(str(index))
 
 def extract_info(file , encoding='utf-8'):
     info = {
@@ -47,7 +47,7 @@ def extract_info(file , encoding='utf-8'):
     info['Track'] = track
     return info
 
-mp3_file = Path(__file__).parent.parent.parent / 'Desktop' / 'music' / 'Rado0y & Jaguar.C & Meme-- Mshtaglk -2020.mp3'
+mp3_file = Path(__file__).parent.parent.parent / 'Desktop' / 'music' / 'Chilly.mp3'
 tag_size = 128
 with mp3_file.open('rb') as fr:
     fr.seek(-tag_size , 2)
