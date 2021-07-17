@@ -32,7 +32,7 @@ def create_id3v1_info(
         id3v1['year'] = bytes(year.ljust(4 , '\x00')[:4] , encoding=encoding)
     if comment:
         id3v1['comment'] = bytes(comment.ljust(30 , '\x00')[:30] , encoding=encoding)
-    if genre in range(0 , 192):
+    if genre in range(192):
         id3v1['genre'] = genre.to_bytes(1 , byteorder='big')
 
     return (
