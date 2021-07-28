@@ -1,7 +1,7 @@
 # Import the pygame module
 import pygame
 import os , sys
-
+from os import path
 # Import random for random numbers
 import random
 
@@ -30,7 +30,8 @@ SKY_BLUE = (135, 206, 250)
 class Player(pygame.sprite.Sprite):
     def __init__(self):
         super().__init__()
-        self.surf = pygame.image.load( './others/pygame-journey/primer/resources/images/jet.png' ).convert()
+
+        self.surf = pygame.image.load( path.join('resources' , 'images' , 'jet.png') ).convert()
         self.surf.set_colorkey(WHITE , RLEACCEL)
         self.rect = self.surf.get_rect()
 
@@ -64,7 +65,8 @@ class Player(pygame.sprite.Sprite):
 class Enemy(pygame.sprite.Sprite):
     def __init__(self):
         super().__init__()
-        self.surf = pygame.image.load( 'others/pygame-journey/primer/resources/images/missile.png' ).convert()
+
+        self.surf = pygame.image.load( path.join('resources' , 'images' , 'missile.png') ).convert()
         self.surf.set_colorkey(WHITE , RLEACCEL)
          # The starting position is randomly generated, as is the speed
         self.rect = self.surf.get_rect(
@@ -87,7 +89,7 @@ class Enemy(pygame.sprite.Sprite):
 class Cloud(pygame.sprite.Sprite):
     def __init__(self):
         super().__init__()
-        self.surf = pygame.image.load( 'others/pygame-journey/primer/resources/images/cloud.png' ).convert()
+        self.surf = pygame.image.load( path.join('resources' , 'images' , 'cloud.png') ).convert()
         self.surf.set_colorkey(BLACK , RLEACCEL)
          # The starting position is randomly generated
         self.rect = self.surf.get_rect(
@@ -148,14 +150,15 @@ all_sprites.add(player)
 # Load and play our background music
 # Sound source: http://ccmixter.org/files/Apoxode/59262
 # License: https://creativecommons.org/licenses/by/3.0/
-pygame.mixer.music.load('others/pygame-journey/primer/resources/music/background-music.mp3')
+
+pygame.mixer.music.load( path.join('resources' , 'music' , 'music.wav') )
 pygame.mixer.music.play(-1)
 
 # Load all our sound files
 # Sound sources: Jon Fincher
-move_up_sound = pygame.mixer.Sound('others/pygame-journey/primer/resources/music/move_up_sound.ogg')
-move_down_sound = pygame.mixer.Sound('others/pygame-journey/primer/resources/music/move_down_sound.ogg')
-collision_sound = pygame.mixer.Sound('others/pygame-journey/primer/resources/music/collision_sound.ogg')
+move_up_sound = pygame.mixer.Sound( path.join('resources' , 'music' , 'move_up_sound.ogg') )
+move_down_sound = pygame.mixer.Sound( path.join('resources' , 'music' , 'move_down_sound.ogg') )
+collision_sound = pygame.mixer.Sound( path.join('resources' , 'music' , 'collision_sound.ogg') )
 
 # Set the base volume for all sounds
 move_up_sound.set_volume(0.5)
