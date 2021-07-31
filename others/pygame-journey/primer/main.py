@@ -4,7 +4,6 @@ import os , sys
 from os import path
 # Import random for random numbers
 import random
-
 # Import pygame.locals for easier access to key coordinates
 # Updated to conform to flake8 and black standards
 from pygame.locals import (

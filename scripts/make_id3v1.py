@@ -1,6 +1,5 @@
 from pathlib import Path
 
-mp3_file = Path(__file__).parent.parent.parent / 'Desktop' / 'music' / 'chilly.mp3'
 
 
 def create_id3v1_info(
@@ -45,7 +44,11 @@ def create_id3v1_info(
         id3v1['genre']
     )
 
-def write_info(info):
+def write_info(info=None , mp3_file=None):
+    if not mp3_file:
+        raise Exception('you must provide an mp3 file')
+    if not info:
+        info = create_id3v1_info()
     with mp3_file.open('r+b') as file_obj:
         try:
             file_obj.seek(-128, 2)
@@ -54,12 +57,28 @@ def write_info(info):
         file_obj.write(info)
     file_obj.close()
 if __name__ == '__main__':
+    '''
+        from scripts import make_id3v1
+        from pathlib import Path
+
+        f = Path(__file__).parent.parent / 'Desktop' / 'music' / 'Hind Ziadi - Majnouna.mp3'
+
+        info = make_id3v1.create_id3v1_info(
+            title = 'Hussein Sarea',
+            album = 'Album',
+        )
+
+        make_id3v1.write_info(info , mp3_file=f)
+
+    '''
+    mp3_file = Path(__file__).parent.parent.parent / 'Desktop' / 'music' / 'chilly.mp3'
+
     info = create_id3v1_info(
-        title='chilly' , artist='Hussein Sarea' ,
+        title='chilly' , artist='hussein' ,
         album = '2002 - Disco Collection' ,
         year = '2021',
         comment = 'Hello world',
         genre=191,
         encoding='latin1'
     )
-    write_info(info)
+    write_info(info , mp3_file)
