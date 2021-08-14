@@ -55,5 +55,6 @@ class filesystem:
 
 
 
-for f in filesystem.list_files('../../../../../Desktop'):
-    print(f)
+if __name__ == '__main__':
+    for f in filesystem.list_files('../../../../../Desktop'):
+        print(f)
