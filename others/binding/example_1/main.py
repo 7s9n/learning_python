@@ -30,7 +30,7 @@ class filesystem:
     __list_files = wrap_function('list_files', [c_char_p], c_void_p)
     __size_c = wrap_function('size', [c_void_p], c_int)
     __get_data_c = wrap_function('get_data', [c_void_p, c_int], c_char_p)
-
+    __free_memory = wrap_function('free_memory', [c_void_p])
     @staticmethod
     def list_files(path: Union[str, Path]):
         try:
@@ -43,6 +43,7 @@ class filesystem:
             for i in range(filesystem.__size(vector)):
                 files.append(filesystem.__get_data(vector, i))
         finally:
+            filesystem.__free_memory(vector)
             return files
 
     @staticmethod
@@ -54,7 +55,6 @@ class filesystem:
         return filesystem.__get_data_c(vector, idx).decode('utf-8', 'ignore')
 
 
-
 if __name__ == '__main__':
-    for f in filesystem.list_files('../../../../../Desktop'):
+    for f in filesystem.list_files('.'):
         print(f)

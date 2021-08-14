@@ -18,6 +18,10 @@ int size(void* v){
     return ((vector<string>*)(v))->size();
 }
 
+void free_memory(void* v){
+  std::cout << "free memory" << '\n';
+  delete ((vector<string>*)(v));
+}
 int sum(int a,int b){
   return a + b;
 }

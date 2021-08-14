@@ -17,6 +17,7 @@ void func();
 int sum(int,int);
 void* list_files(const char*);
 const char* get_data(void* vec, int);
+void free_memory(void*);
 int size(void* v);
 
 #ifdef __cplusplus
