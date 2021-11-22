@@ -25,6 +25,8 @@ sum_cpp = wrap_function('sum', [c_int, c_int], c_int)
 # func()
 # print(sum_cpp(1 , 200))
 
+def _to_str(value: bytes):
+    return value.decode('utf-8' , 'ignore') if isinstance(value , bytes) else value
 
 class filesystem:
     __list_files = wrap_function('list_files', [c_char_p], c_void_p)
@@ -52,8 +54,7 @@ class filesystem:
 
     @staticmethod
     def __get_data(vector, idx: int):
-        return filesystem.__get_data_c(vector, idx).decode('utf-8', 'ignore')
-
+        return _to_str(filesystem.__get_data_c(vector, idx))
 
 if __name__ == '__main__':
     for f in filesystem.list_files('.'):
