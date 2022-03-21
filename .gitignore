@@ -1,6 +1,7 @@
 __pycache__
 __pycache__/
 __pycache__/*
+vscode
 .vscode
 .vscode/*
 !.vscode/settings.json
